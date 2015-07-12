@@ -2,7 +2,7 @@ download.file("https://archive.ics.uci.edu/ml/machine-learning-databases/00235/h
 
 all <- read.table(unzip("IndiviualHouseholdElectricPowder.zip"), header=TRUE, sep=";")
 
-inrange <- subset(allData, Date %in% c("1/2/2007", "2/2/2007"))
+inrange <- subset(all, Date %in% c("1/2/2007", "2/2/2007"))
 
 datetime <- strptime(paste(inrange$Date, inrange$Time, sep=" "), format="%d/%m/%Y %H:%M:%S")
 foo <- cbind(inrange, datetime)
